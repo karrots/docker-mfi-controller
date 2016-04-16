@@ -2,7 +2,7 @@ FROM java:7-jre
 
 ENV MFI_VERSION=2.1.11
 
-RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50
 
 RUN apt-get -y update \
 	&& DEBIAN_FRONTEND=noninteractive \
