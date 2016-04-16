@@ -1,10 +1,12 @@
 FROM java:7-jre
 
-ENV MFI_VERSION=2.1.12
+ENV MFI_VERSION=2.1.11
+
+RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50
 
 RUN apt-get -y update \
 	&& DEBIAN_FRONTEND=noninteractive \
-		apt-get install -y -q --no-install-recommends libtcnative-1 mongodb-server unzip
+	apt-get install -y -q --no-install-recommends libtcnative-1 mongodb-server unzip
 
 ADD https://www.ubnt.com/downloads/mfi/$MFI_VERSION/mFi.unix.zip /
 
